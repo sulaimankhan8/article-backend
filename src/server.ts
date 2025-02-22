@@ -11,7 +11,7 @@ import clerkAuth from "./middleware/clerkAuth";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+
 app.use(express.json());
 
 app.use(
@@ -21,7 +21,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/article", clerkAuth,articleRoutes);
 app.use("/api/genera", generaRoutes);
