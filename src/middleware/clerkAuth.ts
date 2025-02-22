@@ -1,4 +1,4 @@
-import { clerkExpressRequireAuth } from "@clerk/express";
+import { requireAuth } from "@clerk/express";
 import { Request, Response, NextFunction } from "express";
 
 // Extend Express Request type to include auth
@@ -8,6 +8,6 @@ declare module "express" {
   }
 }
 
-const clerkAuth = clerkExpressRequireAuth();
+const clerkAuth = requireAuth();
 
 export default clerkAuth;
